@@ -1,7 +1,5 @@
 import { Shield } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import UrlAnalyzer from "@/components/phishwatch/UrlAnalyzer";
-import ContentClassifier from "@/components/phishwatch/ContentClassifier";
 
 export default function PhishWatchPage() {
   return (
@@ -19,22 +17,7 @@ export default function PhishWatchPage() {
           </p>
         </header>
 
-        <Tabs defaultValue="url-analyzer" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 bg-muted p-1 rounded-lg">
-            <TabsTrigger value="url-analyzer" className="data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md rounded-md py-2.5 font-medium">
-              URL Analyzer
-            </TabsTrigger>
-            <TabsTrigger value="content-classifier" className="data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md rounded-md py-2.5 font-medium">
-              Content Classifier
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="url-analyzer" className="mt-6">
-            <UrlAnalyzer />
-          </TabsContent>
-          <TabsContent value="content-classifier" className="mt-6">
-            <ContentClassifier />
-          </TabsContent>
-        </Tabs>
+        <UrlAnalyzer />
 
         <footer className="text-center text-sm text-muted-foreground pt-8">
           <p>&copy; {new Date().getFullYear()} PhishWatch. Stay Secure.</p>
